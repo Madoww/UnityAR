@@ -6,6 +6,7 @@ using UnityEngine.Experimental.XR;
 
 public class ARTapToPlaceObject : MonoBehaviour
 {
+    public GameObject objectToPlace;
     public GameObject placementIndicator;
 
     private ARSessionOrigin arOrigin;
@@ -23,6 +24,11 @@ public class ARTapToPlaceObject : MonoBehaviour
     {
         UpdatePlacementPose();
         UpdatePlacementIndicator();
+
+        if(placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        {
+            PlaceObject();
+        }
     }
 
     private void UpdatePlacementPose()
@@ -38,6 +44,10 @@ public class ARTapToPlaceObject : MonoBehaviour
         if(placementPoseIsValid)
         {
             placementPose = hits[0].pose;
+
+            Vector3 cameraForward = Camera.current.transform.forward;
+            Vector3 cameraBearing = new Vector3(cameraForward.x, 0, cameraForward.z).normalized;
+            placementPose.rotation = Quaternion.LookRotation(cameraBearing);
         }
 
     }
@@ -53,5 +63,10 @@ public class ARTapToPlaceObject : MonoBehaviour
         {
             placementIndicator.SetActive(false);
         }
+    }
+
+    private void PlaceObject()
+    {
+        Instantiate(objectToPlace, placementPose.position, placementPose.rotation);
     }
 }
