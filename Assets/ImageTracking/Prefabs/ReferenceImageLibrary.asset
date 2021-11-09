@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 848409ee8ba454f42a5ddff137688a27, type: 3}
+  m_Name: ReferenceImageLibrary
+  m_EditorClassIdentifier: 
+  m_GuidLow: 5141167981471682047
+  m_GuidHigh: 8793294132708082821
+  m_Images:
+  - m_SerializedGuid:
+      m_GuidLow: 4697527711312582248
+      m_GuidHigh: 2273513162813628585
+    m_SerializedTextureGuid:
+      m_GuidLow: 1127239516426578007
+      m_GuidHigh: 10901382355715107995
+    m_Size: {x: 0, y: 0}
+    m_SpecifySize: 0
+    m_Name: TrackedImage
+    m_Texture: {fileID: 2800000, guid: 2963a857c25e0fa49b2c1c997e7d4997, type: 3}
